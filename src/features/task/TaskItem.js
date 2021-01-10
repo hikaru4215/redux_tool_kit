@@ -7,7 +7,8 @@ const TaskItem = ({task}) => {
 
     return (
         <div>
-            <input type="checkbox"
+            <input
+                type="checkbox"
                 onClick={() => dispatch(completTask(task))}
                 defaultChecked={task.completed}
                 />

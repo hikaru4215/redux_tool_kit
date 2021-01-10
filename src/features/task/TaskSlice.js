@@ -24,14 +24,13 @@ export const TaskSlice = createSlice({
 },
 reducers: {
         newTask: (state, action) => {
-
-            state.idCount ++;
+            state.idCount++;
             const newItem = {
                 id: state.idCount,
                 title: action.payload,
                 completed: false,
             };
-            state.task = [newItem, ...state.tasks];
+            state.tasks = [newItem, ...state.tasks];
         },
         completTask: (state, action) => {
             const task = state.tasks.find((t) => t.id === action.payload.id)
