@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {newTask} from './TaskSlice';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { newTask } from './TaskSlice';
 
 const TaskInput = () => {
     const dispatch = useDispatch();
     const [editTitle, setEditTitle] = useState("");
     const handleTitleChange = (e) => {
-        setEditTitle(e.target.value)
+        setEditTitle(e.target.value);
     };
     const handleSubmit = (e) => {
-        e.perventDefault();
+        e.preventDefault();
         dispatch(newTask(editTitle));
         setEditTitle("");
     };
